@@ -1,5 +1,6 @@
 import React from "react";
 import image from "../assets/images/logo-DH.png";
+import { Link } from "react-router-dom";
 
 function SideBar() {
   return (
@@ -10,24 +11,24 @@ function SideBar() {
         id="accordionSidebar"
       >
         {/*<!-- Sidebar - Brand -->*/}
-        <a
+        <Link
           className="sidebar-brand d-flex align-items-center justify-content-center"
-          href="/"
+          to="/"
         >
           <div className="sidebar-brand-icon">
             <img className="w-100" src={image} alt="Digital House" />
           </div>
-        </a>
+        </Link>
 
         {/*<!-- Divider -->*/}
         <hr className="sidebar-divider my-0" />
 
         {/*<!-- Nav Item - Dashboard -->*/}
         <li className="nav-item active">
-          <a className="nav-link" href="/">
+          <Link to={"/"} className="nav-link">
             <i className="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard - DH movies</span>
-          </a>
+          </Link>
         </li>
 
         {/*<!-- Divider -->*/}
@@ -38,26 +39,26 @@ function SideBar() {
 
         {/*<!-- Nav Item - Pages -->*/}
         <li className="nav-item">
-          <a className="nav-link collapsed" href="/">
-            <i className="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
-          </a>
+          <Link to={"/genres"} className="nav-link collapsed">
+            <i className="fas fa-fw fa-cubes"></i>
+            <span>Géneros </span>
+          </Link>
         </li>
 
         {/*<!-- Nav Item - Charts -->*/}
         <li className="nav-item">
-          <a className="nav-link" href="/">
-            <i className="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span>
-          </a>
+          <Link to={"/lastMovie"} className="nav-link collapsed">
+            <i className="fas fa-fw fa-film"></i>
+            <span>ültima película </span>
+          </Link>
         </li>
 
         {/*<!-- Nav Item - Tables -->*/}
         <li className="nav-item">
-          <a className="nav-link" href="/">
-            <i className="fas fa-fw fa-table"></i>
-            <span>Tables</span>
-          </a>
+          <Link to={"/movies"} className="nav-link collapsed">
+            <i className="fas fa-fw fa-video"></i>
+            <span>Películas </span>
+          </Link>
         </li>
 
         {/*<!-- Divider -->*/}
