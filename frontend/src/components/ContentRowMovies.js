@@ -1,42 +1,50 @@
 import React from 'react';
 import SmallCard from './SmallCard';
 
-let productInDataBase = {
-    color:   "primary",
-    titulo: "Movies in Data Base",
-    valor: 21,
-    icono: "fas fa-film",
+/*  Cada set de datos es un objeto literal */
+
+/* <!-- Movies in DB --> */
+
+let moviesInDB = {
+    title: 'Movies in Data Base',
+    color: 'primary', 
+    cuantity: 21,
+    icon: 'fa-clipboard-list'
 }
 
-let amount ={
-    color:   "success",
-    titulo: "Total awards",
-    valor: 79,
-    icono: "fas fa-award",
+/* <!-- Total awards --> */
+
+let totalAwards = {
+    title:' Total awards', 
+    color:'success', 
+    cuantity: '79',
+    icon:'fa-award'
 }
 
-let user = {
-    color:   "warning",
-    titulo: "Actors quantity",
-    valor: 49,
-    icono: "fas fa-user",
+/* <!-- Actors quantity --> */
+
+let actorsQuantity = {
+    title:'Actors quantity' ,
+    color:'warning',
+    cuantity:'49',
+    icon:'fa-user-check'
 }
 
-let cardProps = [productInDataBase,amount,user];
+let cartProps = [moviesInDB, totalAwards, actorsQuantity];
 
-
-function ContentRowTop(){
+function ContentRowMovies(){
     return (
-        <React.Fragment>
-        {/*<!-- Content Row -->*/}
+    
         <div className="row">
-            {
-                cardProps.map((producto,index)=>{
-                    return <SmallCard  {...producto}  key= {index}/>
-                })
-            }      
+            
+            {cartProps.map( (movie, i) => {
+
+                return <SmallCard {...movie} key={i}/>
+            
+            })}
+
         </div>
-        </React.Fragment>
     )
 }
-export default ContentRowTop;
+
+export default ContentRowMovies;
